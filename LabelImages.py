@@ -56,12 +56,12 @@ def get_pics(directory):
 #     return model
 
 
-def process_test_image(path):
-    img = image.load_img(path, target_size=(150,150))
-    img_array = image.img_to_array(img)
-    img_array = np.expand_dims(img_array, axis=0)
-
-    return img_array
+# def process_test_image(path):
+#     img = image.load_img(path, target_size=(150,150))
+#     img_array = image.img_to_array(img)
+#     img_array = np.expand_dims(img_array, axis=0)
+#
+#     return img_array
 
 
 # def predict_image(model, img):
@@ -125,12 +125,12 @@ while True:
         if img_num < len(images)-1:
             change_pic('next')
         else:
-            print('No Next picture')
+            print('No Next image')
     elif k == ord('a'):
         if img_num > 0:
             change_pic('previous')
         else:
-            print('No Previous picture')
+            print('No Previous image')
 
     # saves cropped images in positive and moves original to categorized
     #1 for pos, 2 for neg, 3 for none
@@ -149,8 +149,10 @@ while True:
             timestamp = str(int(datetime.timestamp(datetime.now())))
             if k == ord('1'):
                 cv2.imwrite(os.path.join('images', 'positives', timestamp + img_name), imgCrop)
+                print('image copied to positives folder...')
             elif k == ord('2'):
                 cv2.imwrite(os.path.join('images', 'negatives', timestamp + img_name), imgCrop)
+                print('image copied to negatives folder...')
             # elif k == ord('3'):
             #     cv2.imwrite(os.path.join(img_dir, 'test_1', timestamp + img_name), imgCrop)
             # elif k == ord('4'):
@@ -163,6 +165,6 @@ while True:
             change_pic('next')
             #os.rename('images/' + img_name, 'labeled/' + img_name)
         else:
-            print('No Next picture')
+            print('No Next image')
             break
 
