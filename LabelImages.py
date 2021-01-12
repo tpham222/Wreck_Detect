@@ -2,15 +2,15 @@ import cv2
 from datetime import datetime
 import os
 import numpy as np
-from tensorflow import keras
-from tensorflow.keras.preprocessing import image
+# from tensorflow import keras
+# from tensorflow.keras.preprocessing import image
 
 # Creating Folders
-# if not os.path.exists('positives'):
-#     os.makedirs('positives')
+# if not os.path.exists('images/positives'):
+#     os.makedirs('images/positives')
 #
-# if not os.path.exists('negatives'):
-#     os.makedirs('negatives')
+# if not os.path.exists('images/negatives'):
+#     os.makedirs('images/negatives')
 
 
 x_start, y_start, x_end, y_end = 0, 0, 0, 0
@@ -48,12 +48,12 @@ def get_pics(directory):
     return [f for f in os.listdir(directory) if os.path.isfile(os.path.join(os.getcwd(), directory, f))]
 
 
-def load_model(path):
-    model = keras.models.load_model(path)
-    model.compile(optimizer=keras.optimizers.Adam(1e-5)
-                         , loss=keras.losses.BinaryCrossentropy(from_logits=True)
-                         , metrics=[keras.metrics.BinaryAccuracy()])
-    return model
+# def load_model(path):
+#     model = keras.models.load_model(path)
+#     model.compile(optimizer=keras.optimizers.Adam(1e-5)
+#                          , loss=keras.losses.BinaryCrossentropy(from_logits=True)
+#                          , metrics=[keras.metrics.BinaryAccuracy()])
+#     return model
 
 
 def process_test_image(path):
@@ -64,27 +64,28 @@ def process_test_image(path):
     return img_array
 
 
-def predict_image(model, img):
-    img = process_test_image(img)
-    prediction = model.predict(img)
+# def predict_image(model, img):
+#     img = process_test_image(img)
+#     prediction = model.predict(img)
+#
+#     if prediction[0][0] < 0.50:
+#         print('Not Wreck')
+#         print(round((1 - prediction[0][0]) * 100, 2))
+#     else:
+#         print('Wreck')
+#         print(round(prediction[0][0] * 100, 2))
 
-    if prediction[0][0] < 0.50:
-        print('Not Wreck')
-        print(round((1 - prediction[0][0]) * 100, 2))
-    else:
-        print('Wreck')
-        print(round(prediction[0][0] * 100, 2))
 
-
-model = load_model('model_h5.h5')
+# # Load model to predict image class
+# model = load_model('model_h5.h5')
 
 window_name = '1P, 2N, 3tP, 4tN'
 img_num = 0
-predict_num = 1
+#predict_num = 1
 
 while True:
     # Looping through all images
-    img_dir = 'test images'
+    img_dir = 'images'
     images = get_pics(img_dir)
 
     if len(images) == 0:
@@ -95,16 +96,10 @@ while True:
     #Current Positives
     pos_img_dir = 'images/positives'
     current_pos = get_pics(pos_img_dir)
-    # for pos_file in os.listdir('positives'):
-    #     positives.append(int(pos_file[2:-4]))
-    # last_positive = max(positives) if len(positives) > 0 else 0
 
     #Current Negatives
     neg_img_dir = 'images/negatives'
     current_neg = get_pics(neg_img_dir)
-    # for neg_file in os.listdir('negatives'):
-    #     negatives.append(int(neg_file[2:-4]))
-    # last_negative = max(negatives) if len(negatives) > 0 else 0
 
     #reading image
     img = cv2.imread(os.path.join(img_dir, img_name))
@@ -117,9 +112,10 @@ while True:
     cv2.imshow(window_name, img)
     k = cv2.waitKey(1)
 
-    if predict_num != img_num:
-        predict_image(model, os.path.join(img_dir, img_name))
-        predict_num = img_num
+    # # Use loaded model to predict image class
+    # if predict_num != img_num:
+    #     predict_image(model, os.path.join(img_dir, img_name))
+    #     predict_num = img_num
 
 
     if k == ord('q'):
@@ -138,6 +134,7 @@ while True:
 
     # saves cropped images in positive and moves original to categorized
     #1 for pos, 2 for neg, 3 for none
+
     elif k in [ord('1'), ord('2'), ord('3'), ord('4')]:
         x = [x_start, x_end]
         y = [y_start, y_end]
@@ -154,10 +151,10 @@ while True:
                 cv2.imwrite(os.path.join('images', 'positives', timestamp + img_name), imgCrop)
             elif k == ord('2'):
                 cv2.imwrite(os.path.join('images', 'negatives', timestamp + img_name), imgCrop)
-            elif k == ord('3'):
-                cv2.imwrite(os.path.join(img_dir, 'test_1', timestamp + img_name), imgCrop)
-            elif k == ord('4'):
-                cv2.imwrite(os.path.join(img_dir, 'test_0', timestamp + img_name), imgCrop)
+            # elif k == ord('3'):
+            #     cv2.imwrite(os.path.join(img_dir, 'test_1', timestamp + img_name), imgCrop)
+            # elif k == ord('4'):
+            #     cv2.imwrite(os.path.join(img_dir, 'test_0', timestamp + img_name), imgCrop)
 
         except Exception as err:
             print('ERROR in writing image: ' + str(err))
