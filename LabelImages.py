@@ -18,7 +18,7 @@ x_start, y_start, x_end, y_end = 0, 0, 0, 0
 cropping = False
 
 
-def mouse_crop(event, x, y):
+def mouse_crop(event, x, y, _flags, _param):
     global x_start, y_start, x_end, y_end, cropping
 
     if event == cv2.EVENT_LBUTTONDOWN:
@@ -43,6 +43,8 @@ def change_pic(direction):
         img_idx += 1
     elif direction == 'previous':
         img_idx -= 1
+    elif direction == 'reset':
+        img_idx = 0
 
 
 def get_pics(directory):
@@ -55,6 +57,7 @@ img_idx = 0
 while True:
     # Looping through all images
     images = get_pics(IMAGES_TO_LABEL_DIR)
+    num_of_imgs = len(images)
 
     # If no images, break loop
     if len(images) == 0:
@@ -102,22 +105,22 @@ while True:
         imgCrop = img[y_start + 2:y_end - 1, x_start + 2:x_end - 1]
         try:
             if k == ord('1'):
-                label = 'positive'
+                label = 'positives'
             elif k == ord('2'):
-                label = 'negative'
+                label = 'negatives'
             else:
                 continue
 
             timestamp = str(int(datetime.timestamp(datetime.now())))
             cv2.imwrite(os.path.join('images', label, timestamp + img_name), imgCrop)
-            print(f'image copied to {label}s folder...')
+            print(f'{timestamp + img_name} copied to {label} folder...')
+            os.remove(img_path)
 
         except Exception as err:
             print('ERROR in writing image: ' + str(err))
 
-        if img_idx < len(images)-1:
-            change_pic('next')
-            os.remove(img_path)
+        if img_idx < num_of_imgs - 1 or num_of_imgs > 1:
+            change_pic('reset')
         else:
             print('No Next image')
             break
