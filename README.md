@@ -28,3 +28,12 @@ Using what I learned and much more time than it would have taken me to label the
 What this script does is, given a directory containing the images, automatically open the image. From there, you can look at the image and decide whether or not it has damage. Pressing '1' will copy the image into a 'positives' folder and pressing '2' will copy it into a 'negatives' folder. Another image would pop up and the process can be repeated until there are no more images. Moving to the next or previous image is as easy as pressing 'D' or 'A', respectively. Another feature I added into this script is the ability to select a part of the image that you wanted to capture. A blue bounding box would show the area that would be captured.
 
 Now, don't get me wrong, the labeling process was still pretty manual, but I believe the script reduced the number of steps it necessary...and it was pretty fun to learn and build out.
+
+## Learning About Convolutional Neural Networks
+The internet is a wonderful resource for learning new things, most of the time for free! My path I took was to use the free version of Coursera's deep learning specialization taught by Andrew Ng, as well as random supplemental articles and videos. The specialization can be found [here](https://www.coursera.org/specializations/deep-learning) and you can audit the courses for free. Auditing the course gives you access to all the videos. I believe they can be found on youtube as well.
+
+After watching a good majority of all the videos, I was able to obtain a basic understanding about how convolutional neural networks worked. This helped me learn some new terms and ideas that I could google if I needed to understand them better while working on my project. 
+
+
+
+
