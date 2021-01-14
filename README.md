@@ -27,7 +27,7 @@ Using what I learned and much more time than it would have taken me to label the
 
 What this script does is, given a directory containing the images, automatically open the image. From there, you can look at the image and decide whether or not it has damage. Pressing '1' will copy the image into a 'positives' folder and pressing '2' will copy it into a 'negatives' folder. Another image would pop up and the process can be repeated until there are no more images. Moving to the next or previous image is as easy as pressing 'D' or 'A', respectively. Another feature I added into this script is the ability to select a part of the image that you wanted to capture. A blue bounding box would show the area that would be captured.
 
-Now, don't get me wrong, the labeling process was still pretty manual, but I believe the script reduced the number of steps it necessary...and it was pretty fun to learn and build out.
+Now, don't get me wrong, the labeling process was still pretty manual, but I believe the script reduced the number of steps necessary...and it was pretty fun to learn and build out.
 
 ## Learning About Convolutional Neural Networks
 The internet is a wonderful resource for learning new things, most of the time for free! My path I took was to use the free version of Coursera's deep learning specialization taught by Andrew Ng, as well as random supplemental articles and videos. The specialization can be found [here](https://www.coursera.org/specializations/deep-learning) and you can audit the courses for free. Auditing the course gives you access to all the videos. I believe they can be found on youtube as well.
@@ -42,7 +42,13 @@ The first thing I did was check out the [beginner tutorials](https://www.tensorf
 After having some hands on experience and learning the basics of TensorFlow, I was finally ready to attempt building my very own image classifier!
 
 ## Model Experimentation
-My goal for this project was not to build a perfect model that could predict car images with 100% accuracy. I wanted to use this project as a way to learn some basics of deep learning and convolutional neural networks along with how to train them. Given that, let's now talk about the coolest part of this project and some of the results.
+My goal for this project was not to build a perfect model that could predict car images with 100% accuracy. I wanted to use this project as a way to learn some basics of deep learning and convolutional neural networks along with how to train them. Given that, let's now talk about the coolest part of this project, the experimentation phase!
+
+* The notebook can be found [here](https://github.com/tpham222/Wreck_Detect/blob/master/WreckDetect_Tensorflow.ipynb)
+
+The first thing I wanted to do was try to create my own models from scratch to see how different iterations affected the performance of the model. The 4 metrics that I looked at were binary accuracy, precision, recall, and the AUC score. Some of iterations I tried out included adding a new layer, increasing the number of hidden units, adding data augmentation, and adding a dropout layer. After many iterations, I ended up with a model that had the following metrics: accuracy: 0.7265 - precision: 0.7248 - recall: 0.6810 - auc: 0.7951. The results weren't too bad, however, there was some overfitting. 
+
+The next method I wanted to try out was transfer learning with fine-tuning. What this means is that I obtain some publicly available pre-trained models, add some of my own layers, and then train it on my own dataset. This is a very powerful method because research teams spent a lot of time and resources to build out their architecture and train it on tens of thousands of images. Keeping it simple, I only added 2 layers on top of these transfered models; a dropout layer to deal with overfitting, and a classification layer for my classes.
 
 
 
