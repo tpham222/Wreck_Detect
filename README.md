@@ -35,5 +35,10 @@ The internet is a wonderful resource for learning new things, most of the time f
 After watching a good majority of all the videos, I was able to obtain a basic understanding about how convolutional neural networks worked. This helped me learn some new terms and ideas that I could google if I needed to understand them better while working on my project. 
 
 
+## TensorFlow
+In order to practice using my basic understanding of convolutional neural networks, I also had to learn about a popular deep learning library developed by Google, TensorFlow.
+The first thing I did was check out the [beginner tutorials](https://www.tensorflow.org/tutorials) on the tensorflow website. I then watched and coded along with a [youtube tutorial playlist](https://www.youtube.com/watch?v=5Ym-dOS9ssA&list=PLhhyoLH6IjfxVOdVC1P1L5z5azs0XjMsb&ab_channel=AladdinPersson) published by youtuber who makes some great educational content, Aladdin Persson.
+
+After having some hands on experience and learning the basics of TensorFlow, I was finally ready to start creating my own models.
 
 
