@@ -48,9 +48,15 @@ My goal for this project was not to build a perfect model that could predict car
 
 The first thing I wanted to do was try to create my own models from scratch to see how different iterations affected the performance of the model. The 4 metrics that I looked at were binary accuracy, precision, recall, and the AUC score. Some of iterations I tried out included adding a new layer, increasing the number of hidden units, adding data augmentation, and adding a dropout layer. After many iterations, I ended up with a model that had the following metrics: accuracy: 0.7265 - precision: 0.7248 - recall: 0.6810 - auc: 0.7951. The results weren't too bad, however, there was some overfitting. 
 
-The next method I wanted to try out was transfer learning with fine-tuning. What this means is that I obtain some publicly available pre-trained models, add some of my own layers, and then train it on my own dataset. This is a very powerful method because research teams spent a lot of time and resources to build out their architecture and train it on tens of thousands of images. Keeping it simple, I only added 2 layers on top of these transfered models; a dropout layer to deal with overfitting, and a classification layer for my classes.
+The next method I wanted to try out was transfer learning with fine-tuning. What this means is that I obtain some publicly available pre-trained models, add some of my own layers, and then train it on my own dataset. This is a very powerful method because research teams spent a lot of time and resources to build out their architecture and train it on tens of thousands of images. Keeping it simple, I only added 2 layers on top of these transferred models; a dropout layer to deal with overfitting, and a classification layer for my classes. The following are the results of the transfered models I fine-tuned:
 
-
-
+|                 | loss     | accuracy | precision | recall   | auc      |
+|-----------------|----------|----------|-----------|----------|----------|
+| mobilenet_v2    | 0.369190 | 0.893878 | 0.932692  | 0.836207 | 0.956161 |
+| resnet50        | 0.589307 | 0.885714 | 0.879310  | 0.879310 | 0.963546 |
+| inception_v3    | 0.540045 | 0.877551 | 0.930000  | 0.801724 | 0.951116 |
+| efficientnet_b1 | 0.476308 | 0.857143 | 0.824000  | 0.887931 | 0.941693 |
+| nasnet          | 0.734002 | 0.853061 | 0.877358  | 0.801724 | 0.934309 |
+| xception        | 0.459689 | 0.812245 | 0.812500  | 0.784483 | 0.894179 |
 
 
