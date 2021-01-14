@@ -39,6 +39,12 @@ After watching a good majority of all the videos, I was able to obtain a basic u
 In order to practice using my basic understanding of convolutional neural networks, I also had to learn about a popular deep learning library developed by Google, TensorFlow.
 The first thing I did was check out the [beginner tutorials](https://www.tensorflow.org/tutorials) on the tensorflow website. I then watched and coded along with a [youtube tutorial playlist](https://www.youtube.com/watch?v=5Ym-dOS9ssA&list=PLhhyoLH6IjfxVOdVC1P1L5z5azs0XjMsb&ab_channel=AladdinPersson) published by youtuber who makes some great educational content, Aladdin Persson.
 
-After having some hands on experience and learning the basics of TensorFlow, I was finally ready to start creating my own models.
+After having some hands on experience and learning the basics of TensorFlow, I was finally ready to attempt building my very own image classifier!
+
+## Model Experimentation
+My goal for this project was not to build a perfect model that could predict car images with 100% accuracy. I wanted to use this project as a way to learn some basics of deep learning and convolutional neural networks along with how to train them. Given that, let's now talk about the coolest part of this project and some of the results.
+
+
+
 
 
