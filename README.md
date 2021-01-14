@@ -8,7 +8,7 @@ You can check out the results in the [Jupyter Notebook](https://github.com/tpham
 Deep learning has many applications and uses and can be a very powerful tool used to predict all sorts of things as well as assist with automation. However, this comes at the cost of interpretability of the model. Regardless, I think it is an amazing, complex field that is worth learning and understanding. This project is my attempt at learning all the tools necessary to build out a deep learning model that can classify an image of a car as having damage or not. 
 
 ## Steps
-* The first thing I needed to do was obtain a bunch of images of cars that are wrecked and cars that have no damage at all. I also needed to write a program to help me efficiently label the images. 
+* The first thing I needed to do was obtain a bunch of images of cars that are wrecked and cars that have no damage at all. I also needed to write a script to help me efficiently label the images. 
 
 * I also had to figure out how convolutional neural networks worked as well as how they are commonly architecured. 
 
@@ -24,3 +24,7 @@ My search led me to a chrome plugin called "Fatkun Batch Download Image" which, 
 Now that I had about 1,200 images, I was ready to manually open up each image, look at it, and then click and drag it into a folder with it's label. After about 5 of them, I had enough of the process. I decided that my time was better spent learning instead! Therefore, I decided to learn some basics of a popular computer vision library called "OpenCV".
 
 Using what I learned and much more time than it would have taken me to label the images instead, I wrote a script [here](https://github.com/tpham222/Wreck_Detect/blob/master/LabelImages.py) that would help make this process a lot easier!
+
+What this script does is, given a directory containing the images, automatically open the image. From there, you can look at the image and decide whether or not it has damage. Pressing '1' will copy the image into a 'positives' folder and pressing '2' will copy it into a 'negatives' folder. Another image would pop up and the process can be repeated until there are no more images. Moving to the next or previous image is as easy as pressing 'D' or 'A', respectively. Another feature I added into this script is the ability to select a part of the image that you wanted to capture. A blue bounding box would show the area that would be captured.
+
+Now, don't get me wrong, the labeling process was still pretty manual, but I believe the script reduced the number of steps it necessary...and it was pretty fun to learn and build out.
