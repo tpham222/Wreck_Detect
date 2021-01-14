@@ -10,7 +10,7 @@ Deep learning has many applications and uses and can be a very powerful tool use
 ## Steps
 * The first thing I needed to do was obtain a bunch of images of cars that are wrecked and cars that have no damage at all. I also needed to write a script to help me efficiently label the images. 
 
-* I also had to figure out how convolutional neural networks worked as well as how they are commonly architecured. 
+* I also had to figure out how convolutional neural networks worked as well as how they are commonly architectured. 
 
 * Then, I needed to pick a deep learning library for python and learn how to use it. For this project, I went with TensorFlow!
 
