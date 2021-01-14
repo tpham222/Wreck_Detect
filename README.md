@@ -17,6 +17,10 @@ Deep learning has many applications and uses and can be a very powerful tool use
 * Finally, I experimented with making my own model as well as transfer learning with fine-tuning.
 
 ## Obtaining and Labeling an Image Dataset
-After spending more time than I'd like to admit searching around the internet to find a dataset of car images that met my needs, I realized that I would need to build my own dataset. This was a daunting task that would require a lot of manual work in downloading and labeling every single image I wanted to use. Before worrying about the labeling part, I would need some images. 
+After spending more time than I'd like to admit searching around the internet to find a dataset of car images that met my needs, I realized that I would need to build my own dataset. This was a daunting task that would require a lot of manual work in downloading and labeling every single image I wanted to use. But Before worrying about the labeling part, I needed some images. 
 
-My search led me to a chrome plugin called "Fatkun Batch Download Image"
+My search led me to a chrome plugin called "Fatkun Batch Download Image" which, along with google images, I used to easily download large amounts of images at once. This plugin also allowed me to ignore irrelevant images.
+
+Now that I had about 1,200 images, I was ready to manually open up each image, look at it, and then click and drag it into a folder with it's label. After about 5 of them, I had enough of the process. I decided that my time was better spent learning instead! Therefore, I decided to learn some basics of a popular computer vision library called "OpenCV".
+
+Using what I learned and much more time than it would have taken me to label the images instead, I wrote a script [here](https://github.com/tpham222/Wreck_Detect/blob/master/LabelImages.py) that would help make this process a lot easier!
