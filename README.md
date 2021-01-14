@@ -62,8 +62,6 @@ The next method I wanted to try out was transfer learning with fine-tuning. What
 The mobilenet_v2 was the best performing of the ones I tested. Looking at just the binary accuracy, it can be seen that transfer learning was able to perform much better than my own personal model.
 
 # Project Conclusion  
-Trying to build out my own deep learning image classifier has been a great learning experience. Working through this project I had learned how to obtain large amounts of images off the internet, how to write my own program to efficiently label my dataset, how to build models using the tensorflow library, how a basic computer vision architecture is set up as well as the basics behind convolutional neural networks and deep learning models.
-
-I was also able to experiment with different models that I developed to see how each iteration affected the performance. Finally, I was able to experiment with transfer learning on many different pre-trained models and fine-tune them on my own dataset.
+Trying to build out my own deep learning image classifier has been a great learning experience. Working through this project I had learned how to obtain large amounts of images off the internet, how to write my own script to efficiently label my dataset, how to build models using the tensorflow library, how a basic computer vision architecture is set up as well as the basics behind convolutional neural networks and deep learning models. I was also able to experiment with different models that I developed to see how each iteration affected the performance. Finally, I was able to experiment with transfer learning on many different pre-trained models and fine-tune them on my own dataset.
 
 This project is definitely not perfect, but I was able to learn a ton! There is still so much more to learn and improve on and I am excited for the future projects I will work on.
